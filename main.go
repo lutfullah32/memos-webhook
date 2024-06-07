@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 	"time"
 )
 
@@ -63,8 +62,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	botToken := os.Getenv("TELEGRAM_BOT_TOKEN")
-	chatID := os.Getenv("TELEGRAM_CHAT_ID")
+	botToken := "7471887116:AAGpw9WlsYDEwXa1elpf65cfVQeYwRf08YE"
+	chatID := "-1002141513360"
 	text := payload.CreatorID + "tarafından paylaşıldı:\n" + payload.Memo
 
 	if err := sendMessage(botToken, chatID, text); err != nil {
